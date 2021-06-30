@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  webserver:
+    build: 
+      context: .
+      dockerfile: ./docker-config/flask.dockerfile
+    working_dir: /app
+    command: /app/api.py
+    ports:
+      - 80:80
+    volumes:
+      - /home/ubuntu/mission-api:/app
